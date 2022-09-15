@@ -15,9 +15,8 @@ class CreateRoomBuilding extends Migration
     {
         Schema::create('room_building', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id_room')->references('id')->on("room");
-            $table->foreign('id_building')->references('id')->on('building');
-            $table->float("value_minute",10,2);
+            $table->integer('id_room');
+            $table->integer('id_building');
             $table->timestamps();
         });
     }

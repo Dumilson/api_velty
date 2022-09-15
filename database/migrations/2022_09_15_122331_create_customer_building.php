@@ -15,8 +15,8 @@ class CreateCustomerBuilding extends Migration
     {
         Schema::create('customer_building', function (Blueprint $table) {
             $table->id();
-            $table->int('id_building')->references('id')->on("building");
-            $table->int('id_customer')->references("id")->on("customer");
+            $table->integer('id_building');
+            $table->integer('id_customer');
             $table->timestamps();
         });
     }

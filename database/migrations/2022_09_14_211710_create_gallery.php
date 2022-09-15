@@ -16,8 +16,8 @@ class CreateGallery extends Migration
         Schema::create('gallery', function (Blueprint $table) {
             $table->id();
             $table->string("filename",200);
-            $table->int("type_gallery");
-            $table->int("id_creator");
+            $table->integer("type_gallery");
+            $table->integer("id_creator");
             $table->timestamps();
         });
     }
