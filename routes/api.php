@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Customer\CustomerController;
+use App\Http\Controllers\RoomTyping\RoomTypingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::group([
     'prefix' => 'customer'
 ], function(){
-    Route::post('/create-costumer', [CustomerController::class, 'store']);
+    Route::post('/create', [CustomerController::class, 'store']);
+});
+Route::group([
+    'prefix' => 'room-typing'
+], function(){
+    Route::post('/create', [RoomTypingController::class, 'store']);
 });
