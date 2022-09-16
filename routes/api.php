@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Building\BuildingController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\RoomTyping\RoomTypingController;
 use Illuminate\Http\Request;
@@ -29,4 +30,10 @@ Route::group([
     'prefix' => 'room-typing'
 ], function(){
     Route::post('/create', [RoomTypingController::class, 'store']);
+});
+
+Route::group([
+    'prefix'=>'building'
+], function(){
+    Route::post('/create', [BuildingController::class, 'store']);
 });
