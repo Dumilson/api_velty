@@ -15,9 +15,9 @@ class CreateAddressRelationship extends Migration
     {
         Schema::create('address_relationship', function (Blueprint $table) {
             $table->id();
-            $table->integer("id_address");
-            $table->integer("id_customer");
-            $table->integer("id_building");
+            $table->integer("id_address")->nullable();
+            $table->integer("id_customer")->nullable();
+            $table->integer("id_building")->nullable();
             $table->timestamps();
         });
     }

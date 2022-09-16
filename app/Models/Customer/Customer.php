@@ -9,18 +9,19 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $table = "costumer";
+    protected $table = "customer";
     protected $fillable = [
         'id',
         'social_reason',
         'name_customer',
         'cnpj',
+        'telephone',
         'email',
         'birth_date',
     ];
     public $timestamps = false;
 
-    public  function store(array $data)
+    public  function storeCustomer(array $data)
     {
         $stmt = $this->create($data);
         if ($stmt) {
@@ -29,7 +30,7 @@ class Customer extends Model
         return false;
     }
 
-    public function getAll()
+    public function getAlCustomerl()
     {
         return $this->select('id', 'name_reason','social_reason', 'cnpj', 'email','birth_date')->paginate(5);
     }

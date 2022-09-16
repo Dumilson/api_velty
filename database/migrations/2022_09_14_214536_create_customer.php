@@ -18,6 +18,7 @@ class CreateCustomer extends Migration
             $table->string("social_reason",100);
             $table->string("name_customer",60);
             $table->string("cnpj",30);
+            $table->string("telephone",50);
             $table->string("email",100);
             $table->date("birth_date");
             $table->timestamps();

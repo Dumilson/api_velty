@@ -26,9 +26,11 @@ class RequestStoreCostumer extends FormRequest
         return [
             'social_reason' =>'required',
             'name_customer' =>'required',
-            'cnpj' =>'required|unique:costumer|cnpj',
-            'email' =>'required|unique:costumer',
-            'birth_date' =>'required'
+            'cnpj' =>'required|unique:customer|cnpj',
+            'email' =>'required|email|unique:customer',
+            'birth_date' =>'required',
+            'cep' => 'required|formato_cep',
+            'telephone' => 'required|telefone'
         ];
     }
 }
